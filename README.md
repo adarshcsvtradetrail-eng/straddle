@@ -1,7 +1,6 @@
 # straddle
 
 # This is SL_hit, Combo_sl_time, Last_PnL_1
-
 Entry_Time se start
 ↓
 Har minute:
