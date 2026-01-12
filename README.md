@@ -1,6 +1,6 @@
 # straddle
 
-# This is SL_hit, Combo_sl_time, Last_PnL_1
+##This is SL_hit, Combo_sl_time, Last_PnL_1
 Entry_Time se start
 ↓
 Har minute:
@@ -14,6 +14,41 @@ Har minute:
 Agar SL hit nahi hua:
     Combo_sl_time = last candle time
     Last_PnL_1 = day-end PnL
+
+
+## This is Re_Entry, Re_Entry_Time, Re_Entry_Combo_Price, Re_entry_combo_sl
+IF SL_hit != "Yes":
+    Re_Entry = NO
+    STOP
+
+IF Combo_sl_time >= 15:00:
+    Re_Entry = NO
+    STOP
+
+IF i > max_reentry:
+    Re_Entry = NO
+    STOP
+
+IF sl_atm != entry_atm:
+    Re_Entry = NO
+    STOP
+
+Re_Entry_Time = Combo_sl_time + Time_Gap
+
+CE_close = CE close price at Re_Entry_Time
+PE_close = PE close price at Re_Entry_Time
+
+Re_Entry_Combo_Price = CE_close + PE_close
+
+Re_entry_combo_sl = roundoff(
+    Re_Entry_Combo_Price × (1 + SL_Percentage / 100)
+)
+
+
+
+
+
+
 
 
 
