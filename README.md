@@ -124,9 +124,7 @@ last_pnl_2
 
 
 
-re_entry = Yes/No
-
-if sl_hit==yes
+re_entry =  if sl_hit==yes
 	if combo_sl_time <3:00
 		if combo_sl_time_Atm == Atm_strike
 
