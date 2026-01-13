@@ -93,3 +93,77 @@ If SL never hit:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+# RE_ENTRY
+
+
+## output:-
+re_entry = Yes/No
+
+re_entry_time
+
+re_entry_combo_price
+
+re_combo_sl
+
+re_combo_sl_time
+
+last_pnl_2
+
+
+
+re_entry = Yes/No
+
+if sl_hit==yes
+	if combo_sl_time <3:00
+		if combo_sl_time_Atm == Atm_strike
+
+then re_entry == Ture(yes)
+
+
+re_entry_time = combo_sl_time + Time_gap(input files)
+
+
+re_entry_combo_price = check  re_entry_time  call close value +  put close value 
+
+
+re_combo_sl = roundoff( Re_Entry_Combo_Price × (1 + SL_Percentage(input files) / 100) )
+
+
+re_combo_sl_time = re_entry_time  every mintues check  CE_high + PE_high > re_combo_sl ? YES → SL_hit = Yes re_combo_sl_time = SL time
+
+
+last_pnl_2 =  re_combo_sl  -  re_entry_combo_price
+
+
+
+if re_entry == false( NO )
+
+
+    last minute  track ↓ 
+     last candle time 
+
+    CE_exit_price = CE_close at this minute
+    PE_exit_price = PE_close at this minute
+
+    CE_PnL = CE_ReEntry_Price − CE_exit_price
+    PE_PnL = PE_ReEntry_Price − PE_exit_price
+   
+
+    last_pnl_2 = CE_PnL + PE_PnL
+
+
+
+
