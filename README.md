@@ -152,17 +152,17 @@ last_pnl_2 =  re_combo_sl  -  re_entry_combo_price
 if re_entry == false( NO )
 
 
-    last minute  track ↓ 
-     last candle time 
+last minute  track ↓ 
+last candle time 
 
-    CE_exit_price = CE_close at this minute
-    PE_exit_price = PE_close at this minute
+CE_exit_price = CE_close at this minute
+PE_exit_price = PE_close at this minute
 
-    CE_PnL = CE_ReEntry_Price − CE_exit_price
-    PE_PnL = PE_ReEntry_Price − PE_exit_price
-   
+CE_PnL = CE_ReEntry_Price − CE_exit_price
+PE_PnL = PE_ReEntry_Price − PE_exit_price
 
-    last_pnl_2 = CE_PnL + PE_PnL
+
+last_pnl_2 = CE_PnL + PE_PnL
 
 
 
